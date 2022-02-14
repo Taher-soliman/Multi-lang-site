@@ -1,0 +1,86 @@
+// Multi lang tips and tricks
+
+/* 
+  --Problems and solutions:
+  =>Don't start with arabic design.
+  => Don't us static text (dynamic from language files).
+  => padding and margin for parent better than child.
+
+  ----------
+
+  => Padding & Margin For To Dir Better Than One Dir(if it dosen't effect on another div).
+  => Don't Forget Page Dir Atrr , All Block Elemnts Depend On It .
+  => Hilight What You Will Edit Soon (Not Now) In RTL File.
+  Example:
+  prop:value; // Need Edit In RTl.
+  => Make Your Dir Edits In The Same Time You Writ The Code.
+  Example:
+  prop2:value; // Edit In RTl(Go To RTL File And Edit It ).
+
+  -----------
+  => Don't Ever Forget Comments And Elements Ordering In Your RTL File.
+  => Use Inline-Block Insted Of Float If You Don't Need Float.
+  * Inline-Block By Defualt Make A Space Between Elemnts + Depend On Your RTL. *
+  => RTL File Is For Dircyions Only (Don't Writ Colors, Background...).
+  => RTL File After Main File (To Override In Arabic).
+
+  ---------
+  => Consider Word Lenght When Specify Element Width.
+  => Don't Destroy Nesting When Creating RTL Files.
+  => Don't Use Elemnt That Need To Change Like Arrow => Use Pseudo Elemnts.
+  .elment::before{
+    font-family:'FontAwesome';
+    content:'\f053'
+    color:#333;
+  };
+
+  *In RTL Change Content And Palce It Any Where You Want*
+  .elment::before{
+
+    content:'\f054'
+
+  };
+
+  => ------ Amazing Features To Help Me  ----- <=
+  => <bdi> Tag ( To Islate Text From His Dir => Arabic Word In English Paragraph And I Need To Write in lang Dir Not My Dir  )
+  * Use Website caniuse.com To See Whats Suuport Tags And Features To Use *
+  => Attribute Dir = [ Auto ]
+  => Text-Align : [ Start , End ]  // Not Supported yet.
+  => Float : [ Inline-Start , Inline-End] // Not Supported yet.
+
+  -------
+
+  =>  Use Helpers Classes <=
+
+  --- Use A Framework[ Bootstrap, Foundation... ].
+  --- Float Classes [ Float-Left, Float-Right ]
+  --- Bootstrap Float Classes [ Pull-Left, Pull-Right ]
+  * In English Float-Left :Right; ==> Arabic Float-Left:Right; *
+  --- Text-Align Classes [ text-right, text-left]
+  --- Direction Classes [ dir-rtl, dir-lte ] ( some fonts need it )
+
+  ==> Properties You Need To Focus On
+
+  --- Margin & Padding
+  --- Border-Radius => Right Or Left
+  --- Pseudo Elemnts
+  --- Border 
+  ---
+  --- Box-Shadow (convert to negative value in RTL -15px Insted Of 15px)
+  --- Float
+  --- Transform: Rotate (convert to negative value in RTL -15deg Insted Of 15deg)
+  --- Text-Align
+  --- Postion ( Reset And Change In RTL)
+
+
+*/
+body {
+  direction: $direction;
+  text-align: $start-direction;
+}
+p {
+  direction: $direction;
+  text-align: $start-direction;
+  padding-#{$end-direction}: 10px;
+  
+}
